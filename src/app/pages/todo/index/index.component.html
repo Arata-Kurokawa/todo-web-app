@@ -2,4 +2,24 @@
 <button>
   <a>作成</a>
 </button>
-
+<ul
+  class="todo-list"
+>
+  <li
+    *ngFor="let todo of todoList"
+  >
+    <div class="todo-card">
+      <div class="todo-card__content">
+        <div class="todo-card__head">
+          <p class="todo-card__title">{{ todo.title }}</p>
+          <!-- <p class="todo-card__state">{{ todo.state }}</p> -->
+        </div>
+        <p class="todo-card__body">{{ todo.body }}</p>
+      </div>
+      <div class="todo-card__buttons">
+        <button class="todo-card__buttons__edit">編集</button>
+        <button class="todo-card__buttons__remove">削除</button>
+      </div>
+    </div>
+  </li>
+</ul>

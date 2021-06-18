@@ -9,6 +9,8 @@ import { TodoIndexComponent } from './index/index.component'
     CommonModule,
     TodoRoutingModule
   ],
-  declarations: [TodoIndexComponent]
+  declarations: [
+    TodoIndexComponent
+  ]
 })
 export class TodoModule { }

@@ -1,4 +1,4 @@
-import { Injectable } from '@angular/core';
+import { Injectable } from '@angular/core'
 import { HttpClient } from '@angular/common/http'
 
 import { Todo } from '@app/models/todo'
@@ -14,6 +14,9 @@ export class TodoService {
   }
   
   getAll(): Observable<Todo[]> {
-    return this.http.get<Todo[]>("/api/todo")
+    return new Observable((observer) => {
+      observer.next([{ id: 1, title: "title", body: "body", state: 0 }])
+    })
+    // return this.http.get<Todo[]>("/api/todo")
   }
 }

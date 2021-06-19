@@ -7,6 +7,7 @@ import { TodoService } from '@app/services/todo-service'
   selector: 'app-todo',
   templateUrl: './index.component.html',
   styleUrls: ['./index.component.scss'],
+  providers: [TodoService]
 })
 export class TodoIndexComponent implements OnInit {
   // todoList: Todo[] = [

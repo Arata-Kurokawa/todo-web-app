@@ -14,9 +14,6 @@ export class TodoService {
   }
   
   getAll(): Observable<Todo[]> {
-    return new Observable((observer) => {
-      observer.next([{ id: 1, title: "title", body: "body", state: 0 }])
-    })
-    // return this.http.get<Todo[]>("/api/todo")
+    return this.http.get<Todo[]>("/api/todo")
   }
 }

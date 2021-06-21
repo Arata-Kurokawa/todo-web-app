@@ -29,4 +29,12 @@ export class TodoIndexComponent implements OnInit {
       this.todoList = data
     })
   }
+
+  onRemove(id: number) {
+    if (confirm('削除しますか？')) {
+      this.todoService.remove(id).subscribe(_ => {
+        this.todoList = this.todoList.filter(todo => todo.id !== id)
+      })
+    }
+  }
 }

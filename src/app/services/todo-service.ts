@@ -22,7 +22,7 @@ export class TodoService {
     return this.http.post<Todo.Id>("/api/todo", reqBody)
   }
 
-  // remove(id: Todo.Id): Observable<void> {
-  //   return this.http.delete<void>(`/api/todo/${id}`)
-  // }
+  remove(id: Todo.Id): Observable<void> {
+    return this.http.delete<void>(`/api/todo/${id}`)
+  }
 }

@@ -40,7 +40,7 @@ export class TodoAddComponent implements OnInit {
       return
     }
 
-    this.todoService.create(this.form.value.title, this.form.value.body, this.form.value.categoryId).subscribe(data => {
+    this.todoService.create(this.form.value.title, this.form.value.body, this.form.value.categoryId).subscribe(_ => {
       this.router.navigate(['/todo'])
     })
   }

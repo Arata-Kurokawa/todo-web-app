@@ -18,7 +18,7 @@
       </div>
       <div class="todo-card__buttons">
         <button class="todo-card__buttons__edit">編集</button>
-        <button class="todo-card__buttons__remove">削除</button>
+        <button class="todo-card__buttons__remove" (click)="onRemove(todo.id)">削除</button>
       </div>
     </div>
   </li>

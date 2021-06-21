@@ -2,7 +2,8 @@ import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { TodoRoutingModule } from './todo-routing.module';
 
-import { TodoIndexComponent } from './index/index.component'
+import { TodoIndexComponent } from './index/index.component';
+import { TodoAddComponent } from './add/add.component'
 
 @NgModule({
   imports: [
@@ -10,7 +11,8 @@ import { TodoIndexComponent } from './index/index.component'
     TodoRoutingModule
   ],
   declarations: [
-    TodoIndexComponent
+    TodoIndexComponent,
+    TodoAddComponent
   ]
 })
 export class TodoModule { }

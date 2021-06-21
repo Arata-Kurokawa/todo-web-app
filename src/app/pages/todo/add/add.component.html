@@ -1,1 +1,30 @@
-<p>add works!</p>
+<h1>Todo作成</h1>
+
+<form [formGroup]="form" (ngSubmit)="onSubmit()">
+  <div>
+    <label>タイトル</label>
+    <input type="text" formControlName="title">
+  </div>
+
+  <div>
+    <label>内容</label>
+    <textarea formControlName="body"></textarea>
+  </div>
+
+  <div>
+    <label>カテゴリ</label>
+    <select formControlName="categoryId">
+      <option
+        [ngValue]=""
+      >
+      --------------
+      </option>
+      <option *ngFor="let todoCategory of todoCategoryList"
+        [ngValue]="todoCategory.id">
+        {{todoCategory.name}}
+    </option>
+    </select>
+  </div>
+
+  <button >作成</button>
+</form>

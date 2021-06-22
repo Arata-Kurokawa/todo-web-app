@@ -2,17 +2,17 @@
 
 <form [formGroup]="form" (ngSubmit)="onSubmit()">
   <div>
-    <label>タイトル</label>
+    <label class="todo-form__label">タイトル</label>
     <input type="text" formControlName="title">
   </div>
 
   <div>
-    <label>内容</label>
+    <label class="todo-form__label">内容</label>
     <textarea formControlName="body"></textarea>
   </div>
 
   <div>
-    <label>カテゴリ</label>
+    <label class="todo-form__label">カテゴリ</label>
     <select formControlName="categoryId">
       <option
         [ngValue]=""
@@ -26,5 +26,9 @@
     </select>
   </div>
 
-  <button>作成</button>
+  <div class="todo-form__bouttons">
+    <input type="submit" value="作成">
+    <button [routerLink]="['/todo']">戻る</button>
+  </div>
 </form>
+

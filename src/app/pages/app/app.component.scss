@@ -12,6 +12,9 @@
   &__content {
     width:      1080px;
     margin:     auto;
+    display:    flex;
+    justify-content: space-between;
+    align-items: center;
   }
 
   &__logo {
@@ -20,6 +23,10 @@
     font-size:         20px;
     font-weight:       bold;
   }
+}
+
+.sign-out-button {
+  height: 32px;
 }
 
 .footer {

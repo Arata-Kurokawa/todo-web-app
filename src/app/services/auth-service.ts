@@ -11,9 +11,10 @@ export class AuthService {
   ) {
   }
 
-  signIn(email: string, password: string): Observable<string> {
-    return new Observable((observer) => {
-      observer.next("sign in success")
-    })
+  signIn(email: string, password: string): Observable<void> {
+    return this.http.post<void>(
+      "/api/auth/signIn",
+      { email: email, password: password }
+    )
   }
 }

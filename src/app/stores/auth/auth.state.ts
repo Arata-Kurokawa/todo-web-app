@@ -1,6 +1,6 @@
 
 
-export interface AppState {
+export interface AuthState {
   isSignedIn: boolean
   csrfToken: string
 }

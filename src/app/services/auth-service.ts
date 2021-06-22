@@ -11,10 +11,20 @@ export class AuthService {
   ) {
   }
 
+  verify(): Observable<boolean> {
+    return this.http.get<boolean>("/api/auth/verify")
+  }
+
   signIn(email: string, password: string): Observable<void> {
     return this.http.post<void>(
       "/api/auth/signIn",
       { email: email, password: password }
+    )
+  }
+
+  signOut(): Observable<void> {
+    return this.http.post<void>(
+      "/api/auth/signOut", {}
     )
   }
 }

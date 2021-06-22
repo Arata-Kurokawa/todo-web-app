@@ -3,7 +3,8 @@ import { createAction, props } from '@ngrx/store';
 export enum AuthActionType {
   signIn = '[auth] signIn',
   signOut = '[auth] signOut',
-  signInSuccess = '[auth] signInSuccess'
+  signInSuccess = '[auth] signInSuccess',
+  signOutSuccess = '[auth] signOutSuccess'
 }
 
 export const signIn = createAction(
@@ -13,8 +14,12 @@ export const signIn = createAction(
 
 export const signInSuccess = createAction(
   AuthActionType.signInSuccess
-)
+);
  
 export const signOut = createAction(
   AuthActionType.signOut
 );
+
+export const signOutSuccess = createAction(
+  AuthActionType.signOutSuccess
+)

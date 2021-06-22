@@ -1,7 +1,7 @@
 import { createReducer, on } from '@ngrx/store'
 
 import { AppState } from './auth.state'
-import { signIn, signOut, signInSuccess } from './auth.action'
+import { signIn, signOut, signInSuccess, signOutSuccess } from './auth.action'
 
 const initialState: AppState = {
   isSignedIn: false,
@@ -14,10 +14,12 @@ export const reducer = createReducer(
     return { ...state }
   }),
   on(signInSuccess, (state) => {
-    console.log("sign in success !!!!!!!!!!!!!!!!!!!!!")
     return { ...state, isSignedIn: true }
   }),
   on(signOut, (state) => {
     return { ...state }
+  }),
+  on(signOutSuccess, (state) => {
+    return { ...state, isSignedIn: false }
   })
 )

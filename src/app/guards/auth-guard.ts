@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { ActivatedRouteSnapshot, CanActivate, Router, RouterStateSnapshot } from '@angular/router';
+import { CanActivate, Router } from '@angular/router';
 
 import { AuthService } from '@app/services/auth-service';
 
@@ -11,10 +11,7 @@ export class AuthGuard implements CanActivate {
   ) {
   }
 
-  async canActivate(
-    route: ActivatedRouteSnapshot,
-    state: RouterStateSnapshot
-  ): Promise<boolean> {
+  async canActivate(): Promise<boolean> {
     const isValid = await this.authService.verify().toPromise()
     if (!isValid) {
       this.router.navigate(['/auth/signIn'])

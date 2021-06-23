@@ -4,11 +4,11 @@ import { RouterModule, Routes } from '@angular/router';
 const routes: Routes = [
   {
     path: "auth",
-    loadChildren: () => import('../auth/auth.module').then(m => m.AuthModule)
+    loadChildren: () => import('./pages/auth/auth.module').then(m => m.AuthModule)
   },
   {
     path: "todo",
-    loadChildren: () => import('../todo/todo.module').then(m => m.TodoModule)
+    loadChildren: () => import('./pages/todo/todo.module').then(m => m.TodoModule)
   }
 ];
 

@@ -9,7 +9,7 @@ import { EffectsModule } from '@ngrx/effects';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 
-
+import { InitEffect } from '@app/stores/init/init.effect';
 import { AuthEffect } from '@app/stores/auth/auth.effect';
 import { reducer as authReducer } from '@app/stores/auth/auth.reducer';
 
@@ -25,7 +25,7 @@ import { reducer as authReducer } from '@app/stores/auth/auth.reducer';
     HttpClientXsrfModule.withOptions({ cookieName: "csrfToken", headerName: "Csrf-Token" }),
     RouterModule,
     StoreModule.forRoot({ auth: authReducer }),
-    EffectsModule.forRoot([AuthEffect])
+    EffectsModule.forRoot([InitEffect, AuthEffect])
   ],
   providers: [],
   bootstrap: [AppComponent]

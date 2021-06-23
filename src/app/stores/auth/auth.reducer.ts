@@ -1,9 +1,9 @@
 import { createReducer, on } from '@ngrx/store'
 
-import { AppState } from './auth.state'
+import { AuthState } from './auth.state'
 import { signIn, signOut, signInSuccess, signOutSuccess } from './auth.action'
 
-const initialState: AppState = {
+const initialState: AuthState = {
   isSignedIn: false,
   csrfToken: ""
 }

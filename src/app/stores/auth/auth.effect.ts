@@ -9,7 +9,7 @@ import { Router } from '@angular/router';
 
 @Injectable()
 export class AuthEffect {
-  signIn$ = createEffect(() => { 
+  signIn$ = createEffect(() => {
     return this.actions$.pipe(
       ofType(signIn),
       mergeMap(action => {

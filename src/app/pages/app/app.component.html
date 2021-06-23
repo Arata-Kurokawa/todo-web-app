@@ -4,11 +4,16 @@
       <span class="header__logo">To-do Sample</span>
       <button
         class="sign-out-button"
-        *ngIf="(isSignedIn$ | async)"
+        *ngIf="isSignedIn$ | async; else elseSignIn"
         (click)="onSignOut()"
       >
         ログアウト
       </button>
+      <ng-template #elseSignIn>
+        <button [routerLink]="['/auth/signIn']">
+          ログイン
+        </button>
+      </ng-template>
     </div>
   </header>
   <main class="main">

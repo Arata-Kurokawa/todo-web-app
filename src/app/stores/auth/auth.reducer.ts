@@ -4,8 +4,7 @@ import { AuthState } from './auth.state'
 import { signIn, signOut, signInSuccess, signOutSuccess } from './auth.action'
 
 const initialState: AuthState = {
-  isSignedIn: false,
-  csrfToken: ""
+  isSignedIn: false
 }
 
 export const reducer = createReducer(

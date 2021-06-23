@@ -1,8 +1,9 @@
-import { createSelector } from '@ngrx/store';
+import { createFeatureSelector, createSelector } from '@ngrx/store';
+import { AuthState, authFeatureName } from '@app/stores/auth/auth.state'
 
-import { AuthState } from '@app/stores/auth/auth.state'
+const getState = createFeatureSelector<AuthState>(authFeatureName);
 
-export const selectSignedIn = createSelector(
-  (state: AuthState) => state.isSignedIn,
-  isSignedIn => isSignedIn
+export const isSignedIn = createSelector(
+  getState,
+  state => state.isSignedIn
 )

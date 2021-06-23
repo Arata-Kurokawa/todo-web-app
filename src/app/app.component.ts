@@ -3,7 +3,8 @@ import { Component } from '@angular/core';
 import { Store, select } from '@ngrx/store';
 import { signOut } from '@app/stores/auth/auth.action'
 import { AuthState } from '@app/stores/auth/auth.state'
-import { map } from 'rxjs/operators';
+
+import { isSignedIn } from "@app/stores/auth/auth.selector"
 
 @Component({
   selector: 'app-root',
@@ -13,11 +14,10 @@ import { map } from 'rxjs/operators';
 export class AppComponent {
   title = 'todo-web-app';
 
-  // TODO selectorにできるはず！！
-  isSignedIn$ = this.store.select('auth').pipe(map(auth => auth.isSignedIn));
+  isSignedIn$ = this.store.select(isSignedIn);
 
   constructor(
-    private store: Store<{ auth: AuthState }>
+    private store: Store
   ) { }
 
   onSignOut() {

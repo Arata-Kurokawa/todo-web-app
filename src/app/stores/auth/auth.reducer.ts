@@ -7,7 +7,7 @@ const initialState: AuthState = {
   isSignedIn: false
 }
 
-export const reducer = createReducer(
+export const authReducer = createReducer(
   initialState,
   on(signIn, (state, _) => {
     return { ...state }
